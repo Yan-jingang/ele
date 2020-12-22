@@ -1,7 +1,7 @@
 <template>
-  <div style="padding: 20px">
-    <el-form :model="form" label-width="120">
-      <el-form-item label="用户名">
+  <div style="display:flex;justify-content:center;align-items: center;height: 700px;">
+    <el-form :model="form" label-width="120" style="width:400px">
+      <el-form-item label="用户名" class="hhh">
         <el-input v-model="form.username"></el-input>
       </el-form-item>
       <el-form-item label="密码">
@@ -9,6 +9,9 @@
       </el-form-item>
       <el-form-item align="center">
         <el-button type="primary" @click="login">登录</el-button>
+      </el-form-item>
+      <el-form-item align="center">
+        <el-button type="primary" @click="register">注册</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -39,17 +42,16 @@ export default {
           this.$message.warning(res.data.message);
         }
       });
+    },
+    register() {
+      this.$router.push({
+        path: "/register"
+      });
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.el-form {
-  width: 50%;
-  margin: auto;
-  padding: 45px;
-  height: 450px;
-  background-color: #fff;
-}
+
 </style>

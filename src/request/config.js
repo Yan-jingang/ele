@@ -1,4 +1,7 @@
 import axios from 'axios';
+import Vue from 'vue'
+
+Vue.prototype.$axios=axios
 
 const http=axios.create({
   timeout:3000,
