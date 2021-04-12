@@ -1,8 +1,14 @@
 <template>
   <div class="manage">
     <!-- dialog -->
-    <el-dialog :title="operateType === 'add' ? '新增用户' : '更新用户'" :visible.sync="isShow">
-      <CommonForm :formLabel="operateFormLabel" :form="operateForm"></CommonForm>
+    <el-dialog
+      :title="operateType === 'add' ? '新增用户' : '更新用户'"
+      :visible.sync="isShow"
+    >
+      <CommonForm
+        :formLabel="operateFormLabel"
+        :form="operateForm"
+      ></CommonForm>
       <span slot="footer" class="dialog-footer">
         <el-button @click="isShow = false">取 消</el-button>
         <el-button type="primary" @click="confirm">确 定</el-button>
@@ -42,7 +48,7 @@ import {
 export default {
   data() {
     return {
-      search:'',
+      search: "",
       isShow: false,
       searchFrom: {
         keyword: ""
@@ -211,19 +217,19 @@ export default {
         });
     },
     //查询用户
-    findUser(){
-      findUser(this.search).then((res)=>{
-        this.tableData = res.data.list
-      })
+    findUser() {
+      findUser(this.search).then(res => {
+        this.tableData = res.data.list;
+      });
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.search{
+.search {
   display: flex;
-  .el-button{
+  .el-button {
     margin-left: 20px;
   }
 }

@@ -1,8 +1,26 @@
 <template>
-  <el-form :inline="true" :model="form" ref="form" label-width="100px" class="demo-ruleForm">
-    <el-form-item v-for="item in formLabel" :key="item.model" :label="item.label">
-      <el-input v-model="form[item.model]" :placeholder="'请输入' + item.label" v-if="item.type=='input'"></el-input>
-      <el-select v-model="form[item.model]" placeholder="请选择" v-if="item.type === 'select'">
+  <el-form
+    :inline="true"
+    :model="form"
+    ref="form"
+    label-width="100px"
+    class="demo-ruleForm"
+  >
+    <el-form-item
+      v-for="item in formLabel"
+      :key="item.model"
+      :label="item.label"
+    >
+      <el-input
+        v-model="form[item.model]"
+        :placeholder="'请输入' + item.label"
+        v-if="item.type == 'input'"
+      ></el-input>
+      <el-select
+        v-model="form[item.model]"
+        placeholder="请选择"
+        v-if="item.type === 'select'"
+      >
         <el-option
           v-for="item in item.opts"
           :key="item.value"
@@ -10,7 +28,10 @@
           :value="item.value"
         ></el-option>
       </el-select>
-      <el-switch v-model="form[item.model]" v-if="item.type === 'switch'"></el-switch>
+      <el-switch
+        v-model="form[item.model]"
+        v-if="item.type === 'switch'"
+      ></el-switch>
       <el-date-picker
         v-model="form[item.model]"
         type="date"

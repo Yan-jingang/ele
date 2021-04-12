@@ -1,5 +1,7 @@
 <template>
-  <div style="display:flex;justify-content:center;align-items: center;height: 700px;">
+  <div
+    style="display:flex;justify-content:center;align-items: center;height: 700px;"
+  >
     <el-form :model="form" label-width="120" style="width:400px">
       <el-form-item label="用户名" class="hhh">
         <el-input v-model="form.username"></el-input>
@@ -52,6 +54,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

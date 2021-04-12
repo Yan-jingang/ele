@@ -1,5 +1,5 @@
 <template>
-  <div id="app"> 
+  <div id="app">
     <router-view />
   </div>
 </template>
@@ -8,35 +8,35 @@
 export default {
   data() {
     return {
-      name: 'kiu'
-    }
+      name: "kiu"
+    };
   },
   methods: {
     add() {
-      return 1+1
+      return 1 + 1;
     }
   },
-  beforeCreate () {
+  beforeCreate() {
     console.log(this.name);
     console.log(this.add);
   },
-  created () {
+  created() {
     console.log(this.name);
-    console.log(this.add);;
+    console.log(this.add);
   },
-  beforeMount () {
-    let div=document.getElementById('app')
-    console.log(div);;
+  beforeMount() {
+    let div = document.getElementById("app");
+    console.log(div);
   },
-  mounted () {
-    let div=document.getElementById('app')
-    console.log(div);;
-  },
-}
+  mounted() {
+    let div = document.getElementById("app");
+    console.log(div);
+  }
+};
 </script>
 
 <style lang="scss">
-#app{
+#app {
   height: 100vh;
 }
 </style>

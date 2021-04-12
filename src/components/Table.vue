@@ -3,9 +3,7 @@
     <el-table :data="tableData" height="90%" stripe v-loading="config.loading">
       <el-table-column label="序号" width="85">
         <template slot-scope="scope">
-          <span >{{
-            (config.page - 1) * 20 + scope.$index + 1
-          }}</span>
+          <span>{{ (config.page - 1) * 20 + scope.$index + 1 }}</span>
         </template>
       </el-table-column>
       <el-table-column
@@ -45,20 +43,20 @@ export default {
   props: {
     tableLabel: Array,
     tableData: Array,
-    config: Object,
+    config: Object
   },
   methods: {
     handleEdit(row) {
-        this.$emit('edit',row)
+      this.$emit("edit", row);
     },
     handleDelete(row) {
-        this.$emit('delete',row)
+      this.$emit("delete", row);
     },
     //   分页触发
     changePage(page) {
       this.$emit("changePage", page);
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -71,7 +69,6 @@ export default {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    
   }
 }
 </style>

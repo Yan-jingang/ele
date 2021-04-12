@@ -4,11 +4,12 @@
       size="small"
       :key="tag.path"
       v-for="tag in tags"
-      :closable="tag.path!=='/'"
+      :closable="tag.path !== '/'"
       :disable-transitions="false"
       @close="handleClose(tag)"
       @click="changeMenu(tag)"
-    >{{tag.name}}</el-tag>
+      >{{ tag.name }}</el-tag
+    >
   </div>
 </template>
 
@@ -32,13 +33,13 @@ export default {
       close: "closetag"
     }),
     handleClose(tag) {
-      this.close(tag)
+      this.close(tag);
     },
-    changeMenu(tag){
+    changeMenu(tag) {
       this.$router.push({
-        path:tag.path
-      })
-      this.$store.commit('selectMenu',tag)
+        path: tag.path
+      });
+      this.$store.commit("selectMenu", tag);
     }
   }
 };

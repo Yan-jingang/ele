@@ -24,7 +24,7 @@
         <el-table :data="tableData">
           <el-table-column
             show-overflow-tooltip
-            v-for="(val,key) in tableList"
+            v-for="(val, key) in tableList"
             :key="key"
             :prop="key"
             :label="val"
@@ -38,24 +38,28 @@
           shadow="hover"
           v-for="item in Data"
           :key="item.value"
-          :body-style="{display:'flex',height: '80px',padding:0}"
+          :body-style="{ display: 'flex', height: '80px', padding: 0 }"
         >
           <i class="icon" :class="`el-icon-${item.icon}`"></i>
           <div class="detail">
-            <p class="detail_num">￥ {{item.value}}</p>
-            <p class="detail_text">{{item.name}}</p>
+            <p class="detail_num">￥ {{ item.value }}</p>
+            <p class="detail_text">{{ item.name }}</p>
           </div>
         </el-card>
       </div>
       <el-card shadow="hover">
-        <Echart style="height:280px" :chartData="echartData.order"/>       
+        <Echart style="height:280px" :chartData="echartData.order" />
       </el-card>
       <div class="graph">
         <el-card shadow="hover">
-          <Echart style="height:260px" :chartData="echartData.user"/>
+          <Echart style="height:260px" :chartData="echartData.user" />
         </el-card>
         <el-card shadow="hover">
-          <Echart style="height:260px" :isAxisChart="false" :chartData="echartData.video"/>
+          <Echart
+            style="height:260px"
+            :isAxisChart="false"
+            :chartData="echartData.video"
+          />
         </el-card>
       </div>
     </el-col>

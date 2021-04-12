@@ -1,9 +1,9 @@
 <template>
   <el-container style="height:100%">
-    <el-aside width="auto"><commonasider/></el-aside>
+    <el-aside width="auto"><commonasider /></el-aside>
     <el-container>
-      <el-header><commonheader/></el-header>
-      <tab/>
+      <el-header><commonheader /></el-header>
+      <tab />
       <el-main>
         <router-view></router-view>
       </el-main>
@@ -12,20 +12,20 @@
 </template>
 
 <script>
-import commonasider from '@/components/CommonAside.vue';
-import commonheader from '@/components/CommonHeader.vue';
-import tab from '@/components/Tab.vue';
+import commonasider from "@/components/CommonAside.vue";
+import commonheader from "@/components/CommonHeader.vue";
+import tab from "@/components/Tab.vue";
 export default {
-  components:{
+  components: {
     commonasider,
     commonheader,
     tab
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-.el-header{
-    background: black;
+.el-header {
+  background: black;
 }
 </style>

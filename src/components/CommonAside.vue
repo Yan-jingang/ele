@@ -7,9 +7,14 @@
     active-text-color="#ffd04b"
     :collapse="isCollage"
   >
-    <el-menu-item @click="changeMenu(item)" index="2" v-for="item in noChildren" :key="item.path">
+    <el-menu-item
+      @click="changeMenu(item)"
+      index="2"
+      v-for="item in noChildren"
+      :key="item.path"
+    >
       <i :class="`el-icon-${item.icon}`"></i>
-      <span slot="title">{{item.name}}</span>
+      <span slot="title">{{ item.name }}</span>
     </el-menu-item>
   </el-menu>
 </template>
@@ -42,7 +47,7 @@ export default {
 };
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .el-menu {
   border: none;
   height: 100%;

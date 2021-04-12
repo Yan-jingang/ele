@@ -110,8 +110,7 @@ export default {
       console.log("1");
       this.$refs.form.resetFields();
       // this.$refs()
-    },
-
+    }
   }
 };
 </script>

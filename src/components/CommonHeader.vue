@@ -1,11 +1,16 @@
 <template>
   <header>
     <div class="left">
-      <el-button type="primary" icon="el-icon-edit" size="mini" @click="scoll"></el-button>
+      <el-button
+        type="primary"
+        icon="el-icon-edit"
+        size="mini"
+        @click="scoll"
+      ></el-button>
       <el-breadcrumb separator="/">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-        <el-breadcrumb-item :to="current.path" v-if='current'>
-          {{current.name}}
+        <el-breadcrumb-item :to="current.path" v-if="current">
+          {{ current.name }}
         </el-breadcrumb-item>
       </el-breadcrumb>
     </div>
@@ -16,7 +21,9 @@
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item icon="el-icon-plus">个人中心</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-circle-plus" @click.native="logOut">退出</el-dropdown-item>
+          <el-dropdown-item icon="el-icon-circle-plus" @click.native="logOut"
+            >退出</el-dropdown-item
+          >
         </el-dropdown-menu>
       </el-dropdown>
     </div>
@@ -24,11 +31,11 @@
 </template>
 
 <script>
-import {mapState} from 'vuex'
+import { mapState } from "vuex";
 export default {
-  computed:{
+  computed: {
     ...mapState({
-      current:state=>state.tab.currentMenu
+      current: state => state.tab.currentMenu
     })
   },
   data() {
@@ -38,24 +45,24 @@ export default {
   },
   methods: {
     scoll() {
-      this.$store.commit('changescoll')
+      this.$store.commit("changescoll");
     },
-    logOut(){
-      this.$store.commit('clearToken');
-      location.reload()
+    logOut() {
+      this.$store.commit("clearToken");
+      location.reload();
     }
-  },
+  }
 };
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.left{
-  .el-button{
+.left {
+  .el-button {
     margin-right: 10px;
   }
   display: flex;
